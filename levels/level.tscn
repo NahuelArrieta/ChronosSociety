@@ -1,12 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7ejpm0cgaqea"]
+[gd_scene load_steps=7 format=3 uid="uid://c7ejpm0cgaqea"]
 
 [ext_resource type="PackedScene" uid="uid://bg8oq3w6fk3j3" path="res://entities/player/player.tscn" id="1_80vhd"]
 [ext_resource type="PackedScene" uid="uid://bn4dscbsrik6o" path="res://entities/enviroment/platform/platform.tscn" id="2_hjsbj"]
 [ext_resource type="Script" uid="uid://48mhitpn4qin" path="res://controllers/time_travel_controller.gd" id="3_cwqvt"]
 [ext_resource type="PackedScene" uid="uid://d3qbem7373n6k" path="res://entities/enviroment/button/button.tscn" id="4_5mrsh"]
 [ext_resource type="PackedScene" uid="uid://b66i5kor3udi4" path="res://entities/enviroment/door/door.tscn" id="5_safpt"]
+[ext_resource type="PackedScene" uid="uid://mhlh1xmx4dds" path="res://levels/background/background.tscn" id="6_gjl0y"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("6_gjl0y")]
 
 [node name="Player1" parent="." instance=ExtResource("1_80vhd")]
 position = Vector2(220, 187)
