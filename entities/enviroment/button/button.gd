@@ -4,6 +4,9 @@ extends Area2D
 
 var active = false
 
+func _ready():
+	Global.revert_stopped.connect(func(): set_active(active))
+
 func _on_body_entered(body: Node2D) -> void:
 	set_active(true)
 	
@@ -16,3 +19,4 @@ func set_active(value: bool):
 	
 	active = value
 	Global.buttonChanged.emit(groupId, active)
+	
