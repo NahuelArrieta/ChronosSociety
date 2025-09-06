@@ -11,3 +11,4 @@ const TIME_TRAVEL_GROUP = "time_travelable"
 ## Signals
 signal revert_started(player: int)
 signal revert_stopped()
+signal buttonChanged(groupId: int, active: bool)	
