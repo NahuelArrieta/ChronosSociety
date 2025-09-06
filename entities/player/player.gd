@@ -13,6 +13,8 @@ var _max_history_length = 600 # Store up to 10 seconds of history (assuming 60 F
 
 
 func _ready():
+	Global.revert_started.connect(start_reverting)
+	Global.revert_stopped.connect(stop_reverting)
 	add_to_group("time_travelable")
 
 func _physics_process(delta):
