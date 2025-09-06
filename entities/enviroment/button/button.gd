@@ -18,5 +18,12 @@ func set_active(value: bool):
 		return
 	
 	active = value
+	
+	## Play animations
+	$Animation.play("middle")
+	if active:
+		$Animation.play("pressed")
+	else:
+		$Animation.play("unpresed")
 	Global.buttonChanged.emit(groupId, active)
 	
