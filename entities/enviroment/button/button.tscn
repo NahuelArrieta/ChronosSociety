@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3qbem7373n6k"]
+
+[ext_resource type="Script" uid="uid://cqwlw0bd6qtch" path="res://entities/enviroment/button/button.gd" id="1_nmqsl"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nmqsl"]
+specular_color = Color(0, 0, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmqsl"]
+size = Vector2(63, 63)
+
+[node name="Button" type="Area2D"]
+script = ExtResource("1_nmqsl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+scale = Vector2(64, 64)
+texture = SubResource("CanvasTexture_nmqsl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_nmqsl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
