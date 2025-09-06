@@ -21,6 +21,8 @@ func _ready():
 	Global.revert_started.connect(start_reverting)
 	Global.revert_stopped.connect(stop_reverting)
 	add_to_group(Global.TIME_TRAVEL_GROUP)
+	
+	
 
 
 func _physics_process(delta):
@@ -35,8 +37,12 @@ func _physics_process(delta):
 
 	var direction = Input.get_axis(left_action, right_action) 
 	velocity.x = direction * speed
+	
+	
 
 	move_and_slide()
+	update_animation()
+	
 
 func record_state():
 	var state = {
@@ -67,3 +73,13 @@ func revert_state():
 
 		return true
 	return false
+	
+func update_animation():
+	if velocity.x > 0:
+		$Animation.play("moving")
+		$Animation.flip_h = false
+	elif velocity.x < 0:
+		$Animation.play("moving")
+		$Animation.flip_h = true
+	else:
+		$Animation.play("idle")
