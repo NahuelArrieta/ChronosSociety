@@ -15,13 +15,13 @@ func start_log_timer():
 
 func _physics_process(delta):
 	# Check if the revert time button is pressed to start the timer.
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_accept"):
 		# Start the timer and make it repeat.
 		is_reverting = true
 		Global.revert_started.emit()
 		
 	# Check if the revert time button is released to stop the timer.
-	if Input.is_action_just_released("ui_up"):
+	if Input.is_action_just_released("ui_accept"):
 		is_reverting = false
 		Global.revert_stopped.emit()
 

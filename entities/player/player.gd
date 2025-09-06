@@ -3,6 +3,11 @@ extends CharacterBody2D
 @export var speed = 300.0
 @export var jump_velocity = -450.0
 
+## Input map
+@export var left_action: String = "LEFT_P1"
+@export var right_action: String = "RIGHT_P1"
+@export var jump_action: String = "JUMP_P1"
+
 var is_reverting = false
 var _state_history = []
 
@@ -18,10 +23,10 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += Global.gravity * delta
 	
-	if is_on_floor() and Input.is_action_just_pressed("ui_accept"): # TODO
+	if is_on_floor() and Input.is_action_just_pressed(jump_action):
 		velocity.y = jump_velocity 
 
-	var direction = Input.get_axis("ui_left", "ui_right") # TODO
+	var direction = Input.get_axis(left_action, right_action) 
 	velocity.x = direction * speed
 
 	move_and_slide()
