@@ -2,19 +2,26 @@ extends CharacterBody2D
 
 @export var speed = 300.0
 @export var jump_velocity = -450.0
+@export var player_number = 1
 
 ## Input map
-@export var left_action: String = "LEFT_P1"
-@export var right_action: String = "RIGHT_P1"
-@export var jump_action: String = "JUMP_P1"
+var left_action: String
+var right_action: String
+var jump_action: String
+
 
 var is_reverting = false
 var _state_history = []
 
 func _ready():
+	left_action = "LEFT_P%d" % player_number
+	right_action = "RIGHT_P%d" % player_number
+	jump_action = "JUMP_P%d" % player_number
+	
 	Global.revert_started.connect(start_reverting)
 	Global.revert_stopped.connect(stop_reverting)
 	add_to_group(Global.TIME_TRAVEL_GROUP)
+
 
 func _physics_process(delta):
 	if is_reverting:
@@ -42,7 +49,9 @@ func record_state():
 	if _state_history.size() > Global._max_history_length:
 		_state_history.pop_back()
 		
-func start_reverting():
+func start_reverting(player):
+	if player == player_number:
+		return
 	is_reverting = true
 
 func stop_reverting():

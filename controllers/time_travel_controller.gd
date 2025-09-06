@@ -2,6 +2,11 @@ extends Node
 
 var is_reverting = false
 
+const revert_time_inputs = [
+	"REVERT_P1",
+	"REVERT_P2",
+] 
+
 func _ready():
 	start_log_timer()
 	
@@ -14,16 +19,17 @@ func start_log_timer():
 	add_child(record_timer)
 
 func _physics_process(delta):
-	# Check if the revert time button is pressed to start the timer.
-	if Input.is_action_just_pressed("ui_accept"):
-		# Start the timer and make it repeat.
-		is_reverting = true
-		Global.revert_started.emit()
+	for i in revert_time_inputs.size():
+		var input = revert_time_inputs[i]
+		var player = i +1
 		
-	# Check if the revert time button is released to stop the timer.
-	if Input.is_action_just_released("ui_accept"):
-		is_reverting = false
-		Global.revert_stopped.emit()
+		if Input.is_action_just_pressed(input):
+			is_reverting = true
+			Global.revert_started.emit(player)
+		
+		if Input.is_action_just_released(input):
+			is_reverting = false
+			Global.revert_stopped.emit()
 
 func _on_record_timer_timeout():
 	if is_reverting:

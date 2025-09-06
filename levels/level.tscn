@@ -31,6 +31,4 @@ script = ExtResource("3_cwqvt")
 
 [node name="Player2" parent="." instance=ExtResource("1_80vhd")]
 position = Vector2(420, 186)
-left_action = "LEFT_P2"
-right_action = "RIGHT_P2"
-jump_action = "JUMP_P2"
+player_number = 2
