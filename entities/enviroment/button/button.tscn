@@ -59,6 +59,7 @@ animation = &"middle"
 
 [node name="PressedSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_g5qce")
+volume_db = -23.696
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
