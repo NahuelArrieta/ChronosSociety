@@ -10,22 +10,22 @@ shader_parameter/light_position = Vector2(0.55, 0.32)
 shader_parameter/light_radius = 0.3
 shader_parameter/light_falloff = 1.5
 
-[sub_resource type="Gradient" id="Gradient_rx702"]
+[sub_resource type="Gradient" id="Gradient_pf02t"]
 offsets = PackedFloat32Array(0.0438596, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_rx702"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wswi6"]
 frequency = 0.0009
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rx702"]
 seamless_blend_skirt = 0.113
-color_ramp = SubResource("Gradient_rx702")
-noise = SubResource("FastNoiseLite_rx702")
+color_ramp = SubResource("Gradient_pf02t")
+noise = SubResource("FastNoiseLite_wswi6")
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_cmi8h"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0gqhe"]
 frequency = 1.0
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cmi8h"]
-noise = SubResource("FastNoiseLite_cmi8h")
+noise = SubResource("FastNoiseLite_0gqhe")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pf02t"]
 shader = ExtResource("1_cmi8h")
@@ -37,7 +37,7 @@ shader_parameter/vignette_center = Vector2(0.5, 0.5)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_wswi6")
-offset_right = 1146.0
+offset_right = 1155.0
 offset_bottom = 644.0
 color = Color(1, 1, 1, 0)
 
@@ -70,5 +70,5 @@ texture = SubResource("NoiseTexture2D_cmi8h")
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_pf02t")
-offset_right = 1151.0
+offset_right = 1162.0
 offset_bottom = 646.0
