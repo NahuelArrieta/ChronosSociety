@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7ejpm0cgaqea"]
+[gd_scene load_steps=12 format=3 uid="uid://c7ejpm0cgaqea"]
 
 [ext_resource type="PackedScene" uid="uid://bg8oq3w6fk3j3" path="res://entities/player/player.tscn" id="1_80vhd"]
 [ext_resource type="PackedScene" uid="uid://bn4dscbsrik6o" path="res://entities/enviroment/platform/platform.tscn" id="2_hjsbj"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" uid="uid://csb5qvgrujlvn" path="res://levels/pause_controller.gd" id="8_d5x7l"]
 [ext_resource type="PackedScene" uid="uid://0kx674o7igwo" path="res://visual/reverse_effect.tscn" id="9_rtcij"]
 [ext_resource type="PackedScene" uid="uid://d0oj0b2c0s4dd" path="res://controllers/time_travel_controller.tscn" id="9_ukwr8"]
+[ext_resource type="PackedScene" uid="uid://4brmlpdgi2ea" path="res://entities/enviroment/winning_door.tscn" id="10_ukwr8"]
+[ext_resource type="Script" uid="uid://bol7ttel1fahb" path="res://levels/scene_contoller.gd" id="11_pb8y7"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -62,3 +64,10 @@ script = ExtResource("8_d5x7l")
 [node name="ReverseEffect" parent="." instance=ExtResource("9_rtcij")]
 
 [node name="TimeTravelController" parent="." instance=ExtResource("9_ukwr8")]
+
+[node name="WinningDoor" parent="." instance=ExtResource("10_ukwr8")]
+position = Vector2(333, 323)
+scale = Vector2(0.5, 0.5)
+
+[node name="SceneContoller" type="Node" parent="."]
+script = ExtResource("11_pb8y7")
