@@ -1,24 +1,60 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3qbem7373n6k"]
+[gd_scene load_steps=8 format=3 uid="uid://d3qbem7373n6k"]
 
 [ext_resource type="Script" uid="uid://cqwlw0bd6qtch" path="res://entities/enviroment/button/button.gd" id="1_nmqsl"]
+[ext_resource type="Texture2D" uid="uid://tuylwk1n2hlo" path="res://visual/button/middle.png" id="2_8v1kb"]
+[ext_resource type="Texture2D" uid="uid://chrsp7p52y5s" path="res://visual/button/pressed.png" id="3_8v1kb"]
+[ext_resource type="Texture2D" uid="uid://ku4r8e88phs8" path="res://visual/button/unpressed.png" id="4_g5qce"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nmqsl"]
 specular_color = Color(0, 0, 1, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmqsl"]
-size = Vector2(63, 63)
+size = Vector2(63, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v7638"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8v1kb")
+}],
+"loop": true,
+"name": &"middle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8v1kb")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_g5qce")
+}],
+"loop": true,
+"name": &"unpresed",
+"speed": 5.0
+}]
 
 [node name="Button" type="Area2D"]
 script = ExtResource("1_nmqsl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(32, 32)
 scale = Vector2(64, 64)
 texture = SubResource("CanvasTexture_nmqsl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(32, 32)
 shape = SubResource("RectangleShape2D_nmqsl")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1.49012e-08)
+scale = Vector2(0.627451, 0.973684)
+sprite_frames = SubResource("SpriteFrames_v7638")
+animation = &"middle"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

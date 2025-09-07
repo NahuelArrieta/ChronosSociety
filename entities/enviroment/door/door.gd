@@ -1,12 +1,12 @@
-extends StaticBody2D
+extends Node2D
 
 # This variable allows you to set the group ID in the Inspector
 # so the door knows which button it should respond to.
 @export var groupId: int
 
 # Get references to the child nodes
-@onready var sprite = $Sprite2D
-@onready var collision_shape = $CollisionShape2D
+@onready var sprite = $Entry/Sprite2D
+@onready var collision_shape = $Entry/CollisionShape2D
 
 var _state_history = []
 var is_reverting = false
@@ -25,8 +25,8 @@ var ACTIVE_STATUS := "ACTIVE"
 var INACTIVE_STATUS := "INACTIVE"
 
 var STATUSES : Dictionary[String, Status] =  {
-	ACTIVE_STATUS: Status.new(Color.BLACK, true),
-	INACTIVE_STATUS: Status.new(Color.GRAY, false),
+	ACTIVE_STATUS: Status.new(Color("9c9c9c"), true),
+	INACTIVE_STATUS: Status.new(Color("9c9c9c", 0.3), false),
 }
 
 func _ready():
