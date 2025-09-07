@@ -22,7 +22,7 @@ func _ready():
 	Global.revert_started.connect(start_reverting)
 	Global.revert_stopped.connect(stop_reverting)
 	add_to_group(Global.TIME_TRAVEL_GROUP)
-	
+	add_to_group(Global.PLAYER_GROUP)
 	
 
 

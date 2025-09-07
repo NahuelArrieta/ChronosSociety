@@ -7,8 +7,10 @@ const _max_history_length = (10 /  log_delay) * 1.2
 
 ## Gropus
 const TIME_TRAVEL_GROUP = "time_travelable"
+const PLAYER_GROUP = "player"
 
 ## Signals
 signal revert_started(player: int)
 signal revert_stopped()
 signal buttonChanged(groupId: int, active: bool)	
+signal game_won()
