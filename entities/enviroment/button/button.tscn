@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3qbem7373n6k"]
+[gd_scene load_steps=9 format=3 uid="uid://d3qbem7373n6k"]
 
 [ext_resource type="Script" uid="uid://cqwlw0bd6qtch" path="res://entities/enviroment/button/button.gd" id="1_nmqsl"]
 [ext_resource type="Texture2D" uid="uid://tuylwk1n2hlo" path="res://visual/button/middle.png" id="2_8v1kb"]
 [ext_resource type="Texture2D" uid="uid://chrsp7p52y5s" path="res://visual/button/pressed.png" id="3_8v1kb"]
 [ext_resource type="Texture2D" uid="uid://ku4r8e88phs8" path="res://visual/button/unpressed.png" id="4_g5qce"]
+[ext_resource type="AudioStream" uid="uid://cgqwsjnxso2or" path="res://sounds/pressed.wav" id="5_g5qce"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nmqsl"]
 specular_color = Color(0, 0, 1, 1)
@@ -55,6 +56,9 @@ position = Vector2(0, 1.49012e-08)
 scale = Vector2(0.627451, 0.973684)
 sprite_frames = SubResource("SpriteFrames_v7638")
 animation = &"middle"
+
+[node name="PressedSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_g5qce")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

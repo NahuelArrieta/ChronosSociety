@@ -33,7 +33,8 @@ func _physics_process(delta):
 		velocity.y += Global.gravity * delta
 	
 	if is_on_floor() and Input.is_action_just_pressed(jump_action):
-		velocity.y = jump_velocity 
+		velocity.y = jump_velocity
+		$Jump.play()
 
 	var direction = Input.get_axis(left_action, right_action) 
 	velocity.x = direction * speed
@@ -75,11 +76,21 @@ func revert_state():
 	return false
 	
 func update_animation():
-	if velocity.x > 0:
+	if velocity.y != 0:
+		$Walking.stop()
+		$Animation.play("idle")
+		
+		if velocity.x != 0:
+			$Animation.flip_h = velocity.x < 0
+		return
+		
+	if velocity.x == 0:
+		$Walking.stop()
+		$Animation.play("idle")
+	else:
 		$Animation.play("moving")
 		$Animation.flip_h = false
-	elif velocity.x < 0:
-		$Animation.play("moving")
-		$Animation.flip_h = true
-	else:
-		$Animation.play("idle")
+		if not $Walking.playing:
+			$Walking.play()
+		
+		$Animation.flip_h = velocity.x < 0
