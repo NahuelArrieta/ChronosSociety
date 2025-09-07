@@ -18,22 +18,14 @@ script = ExtResource("1_fob5h")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 6.0
-offset_right = 2.0
-offset_bottom = 6.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/CenterContainer"]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 392.0
+offset_top = 234.0
+offset_right = 764.0
+offset_bottom = 425.0
 theme_override_constants/separation = 20
 
-[node name="TitleLabel" type="Label" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+[node name="TitleLabel" type="Label" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 48
@@ -41,12 +33,12 @@ text = "Chronos Society"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ResumeButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Resume"
 
-[node name="RetartButton" type="Button" parent="CanvasLayer/CenterContainer/VBoxContainer"]
+[node name="RetartButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
 text = "Restart"
@@ -55,5 +47,5 @@ text = "Restart"
 stream = ExtResource("2_fob5h")
 autoplay = true
 
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
-[connection signal="pressed" from="CanvasLayer/CenterContainer/VBoxContainer/RetartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/RetartButton" to="." method="_on_RestartButton_pressed"]

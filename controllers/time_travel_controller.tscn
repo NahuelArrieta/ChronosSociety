@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0oj0b2c0s4dd"]
+
+[ext_resource type="Script" uid="uid://48mhitpn4qin" path="res://controllers/time_travel_controller.gd" id="1_7kmai"]
+[ext_resource type="AudioStream" uid="uid://cqsqhkuiclv8k" path="res://sounds/reverse tape/start.wav" id="2_lix4k"]
+[ext_resource type="AudioStream" uid="uid://b2fx85vfob4im" path="res://sounds/reverse tape/loop.ogg" id="3_n1emr"]
+[ext_resource type="AudioStream" uid="uid://c5lp3sgage4f4" path="res://sounds/reverse tape/stop.wav" id="4_q3uta"]
+
+[node name="TimeTravelController" type="Node"]
+script = ExtResource("1_7kmai")
+
+[node name="Start" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_lix4k")
+
+[node name="Loop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_n1emr")
+
+[node name="Stop" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_q3uta")

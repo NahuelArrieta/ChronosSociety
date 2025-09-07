@@ -37,8 +37,8 @@ shader_parameter/vignette_center = Vector2(0.5, 0.5)
 
 [node name="ColorRect2" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_wswi6")
-offset_right = 1155.0
-offset_bottom = 657.0
+offset_right = 1160.0
+offset_bottom = 662.0
 color = Color(1, 1, 1, 0)
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -52,8 +52,8 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.998
-offset_right = 1.0
-offset_bottom = 13.29
+offset_right = 2.0
+offset_bottom = 3.32001
 texture = SubResource("NoiseTexture2D_rx702")
 
 [node name="TextureRect2" type="TextureRect" parent="ColorRect"]
@@ -62,8 +62,8 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.998
-offset_right = 1.0
-offset_bottom = 17.29
+offset_right = 2.0
+offset_bottom = 3.32001
 texture = SubResource("NoiseTexture2D_cmi8h")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
