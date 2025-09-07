@@ -12,7 +12,10 @@ func _on_body_entered(body: Node2D) -> void:
 	set_active(true)
 	
 func _on_body_exited(body: Node2D) -> void:
-	set_active(false)
+	var overlapping_bodies = get_overlapping_bodies()
+
+	if overlapping_bodies.size() == 0:
+		set_active(false)
 	
 func set_active(value: bool):
 	if active == value:
