@@ -6,6 +6,5 @@ signal start_game
 
 # Called when the "Start Game" button is pressed.
 func _on_play_button_pressed():
-	# Emit the signal to tell the main scene to change to the game scene.
-	print("Play button pressed!")
+	get_tree().change_scene_to_file("res://levels/level.tscn")
 	start_game.emit()
