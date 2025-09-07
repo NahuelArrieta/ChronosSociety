@@ -37,6 +37,7 @@ func _physics_process(delta):
 		velocity.y += Global.gravity * delta
 	
 	if activate_reverse:
+		$ReverseEffect.rotation_degrees += 5
 		return ## Dont allow movement
 		
 	if is_on_floor() and Input.is_action_just_pressed(jump_action):
@@ -66,6 +67,7 @@ func record_state():
 		
 func start_reverting(player):
 	if player == player_number:
+		$ReverseEffect.visible = true
 		activate_reverse = true
 		return
 	is_reverting = true
@@ -73,6 +75,8 @@ func start_reverting(player):
 func stop_reverting():
 	is_reverting = false
 	activate_reverse = false
+	$ReverseEffect.visible = false
+	$ReverseEffect.rotation_degrees = 0
 
 func revert_state():
 	if _state_history.size() > 0:
