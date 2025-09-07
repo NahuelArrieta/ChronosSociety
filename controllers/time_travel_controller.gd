@@ -23,12 +23,17 @@ func _physics_process(delta):
 		var input = revert_time_inputs[i]
 		var player = i +1
 		
-		if Input.is_action_just_pressed(input):
+		if Input.is_action_just_pressed(input) and !is_reverting:
 			is_reverting = true
+			$Start.play()
+			if !$Loop.playing:
+				$Loop.play()
 			Global.revert_started.emit(player)
 		
 		if Input.is_action_just_released(input):
 			is_reverting = false
+			$Loop.stop()
+			$Stop.play()
 			Global.revert_stopped.emit()
 
 func _on_record_timer_timeout():

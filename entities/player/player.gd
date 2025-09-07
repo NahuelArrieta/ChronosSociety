@@ -11,6 +11,7 @@ var jump_action: String
 
 
 var is_reverting = false
+var activate_reverse = false
 var _state_history = []
 
 func _ready():
@@ -26,15 +27,23 @@ func _ready():
 
 
 func _physics_process(delta):
+	
+	
 	if is_reverting:
-		revert_state() 
+		revert_state()
+		return
 
 	if not is_on_floor():
 		velocity.y += Global.gravity * delta
 	
+	if activate_reverse:
+		$ReverseEffect.rotation_degrees += 5
+		return ## Dont allow movement
+		
 	if is_on_floor() and Input.is_action_just_pressed(jump_action):
 		velocity.y = jump_velocity
 		$Jump.play()
+	
 
 	var direction = Input.get_axis(left_action, right_action) 
 	velocity.x = direction * speed
@@ -58,11 +67,16 @@ func record_state():
 		
 func start_reverting(player):
 	if player == player_number:
+		$ReverseEffect.visible = true
+		activate_reverse = true
 		return
 	is_reverting = true
 
 func stop_reverting():
 	is_reverting = false
+	activate_reverse = false
+	$ReverseEffect.visible = false
+	$ReverseEffect.rotation_degrees = 0
 
 func revert_state():
 	if _state_history.size() > 0:
