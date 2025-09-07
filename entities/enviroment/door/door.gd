@@ -56,6 +56,7 @@ func setStatus(statusKey: String):
 	var s: Status = STATUSES[statusKey]
 	collision_shape.set_deferred("disabled", !s.collision)
 	sprite.modulate = s.color
+	$Sound.play()
 	
 func record_state():
 	var state = {

@@ -3,6 +3,7 @@ extends Area2D
 @export var groupId: int
 
 var active = false
+var pressedSound: AudioStreamPlayer 
 
 func _ready():
 	Global.revert_stopped.connect(func(): set_active(active))
@@ -23,6 +24,7 @@ func set_active(value: bool):
 	$Animation.play("middle")
 	if active:
 		$Animation.play("pressed")
+		$PressedSound.play()
 	else:
 		$Animation.play("unpresed")
 	Global.buttonChanged.emit(groupId, active)

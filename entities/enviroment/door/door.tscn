@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b66i5kor3udi4"]
+[gd_scene load_steps=6 format=3 uid="uid://b66i5kor3udi4"]
 
 [ext_resource type="Script" uid="uid://dn0hohseijwik" path="res://entities/enviroment/door/door.gd" id="1_el4m5"]
 [ext_resource type="Texture2D" uid="uid://m50hwjk8qm1c" path="res://visual/door/base.png" id="2_ulegr"]
+[ext_resource type="AudioStream" uid="uid://bwrpbfbjievt3" path="res://sounds/door.mp3" id="3_i0vcm"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_el4m5"]
 specular_color = Color(0, 1, 1, 1)
@@ -32,3 +33,6 @@ texture = ExtResource("2_ulegr")
 position = Vector2(0, -64)
 scale = Vector2(0.10098, 0.402778)
 texture = ExtResource("2_ulegr")
+
+[node name="Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_i0vcm")
