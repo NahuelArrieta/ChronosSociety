@@ -35,18 +35,18 @@ position = Vector2(288, 384)
 script = ExtResource("3_cwqvt")
 
 [node name="Player2" parent="." instance=ExtResource("1_80vhd")]
-position = Vector2(265, 236)
+position = Vector2(307, 240)
 player_number = 2
 
 [node name="Button" parent="." instance=ExtResource("4_5mrsh")]
 position = Vector2(336, 359)
 
 [node name="Door" parent="." instance=ExtResource("5_safpt")]
-position = Vector2(494, 252)
+position = Vector2(251, 302)
 
 [node name="Door2" parent="." instance=ExtResource("5_safpt")]
-position = Vector2(533, 322)
-groupId = 1
+position = Vector2(434, 383)
+rotation = 1.5708
 
 [node name="Platform" parent="." instance=ExtResource("2_hjsbj")]
 position = Vector2(352, 384)
