@@ -40,8 +40,8 @@ position = Vector2(1088, 152)
 scale = Vector2(2.7016, 1)
 
 [node name="Platform3" parent="Platforms" instance=ExtResource("2_hjsbj")]
-position = Vector2(318, 320)
-scale = Vector2(15.5622, 1)
+position = Vector2(332, 320)
+scale = Vector2(14.4022, 1)
 
 [node name="Platform4" parent="Platforms" instance=ExtResource("2_hjsbj")]
 position = Vector2(138, 484)
@@ -57,14 +57,10 @@ scale = Vector2(5.48223, 1)
 
 [node name="Platform7" parent="Platforms" instance=ExtResource("2_hjsbj")]
 position = Vector2(553, 633)
-scale = Vector2(37.5222, 1)
-
-[node name="Platform8" parent="Platforms" instance=ExtResource("2_hjsbj")]
-position = Vector2(579, -18)
-scale = Vector2(37.5222, 1)
+scale = Vector2(40.2934, 0.975817)
 
 [node name="Wall" parent="Platforms" instance=ExtResource("4_mxp4k")]
-position = Vector2(-17, 297)
+position = Vector2(16, 297)
 scale = Vector2(1, 20.6)
 
 [node name="Wall2" parent="Platforms" instance=ExtResource("4_mxp4k")]
@@ -74,6 +70,10 @@ scale = Vector2(1, 20.6)
 [node name="Wall3" parent="Platforms" instance=ExtResource("4_mxp4k")]
 position = Vector2(574, 234)
 scale = Vector2(0.787815, 16.6924)
+
+[node name="Platform8" parent="Platforms" instance=ExtResource("2_hjsbj")]
+position = Vector2(579, -9)
+scale = Vector2(37.5222, 1)
 
 [node name="Wall4" parent="Platforms" instance=ExtResource("4_mxp4k")]
 position = Vector2(731, 321)
@@ -118,7 +118,7 @@ groupId = 2
 [node name="Door 3" type="Node" parent="Enviroment"]
 
 [node name="Button2" parent="Enviroment/Door 3" instance=ExtResource("4_5mrsh")]
-position = Vector2(36, 459)
+position = Vector2(67, 459)
 groupId = 3
 
 [node name="Killzone2" parent="Enviroment/Door 3" instance=ExtResource("12_hy0rb")]
@@ -139,7 +139,7 @@ position = Vector2(198, 608)
 groupId = 4
 
 [node name="Door3" parent="Enviroment/Door 4" instance=ExtResource("5_safpt")]
-position = Vector2(75, 402)
+position = Vector2(106, 402)
 groupId = 4
 
 [node name="Door 5" type="Node" parent="Enviroment"]
@@ -183,9 +183,9 @@ scale = Vector2(-6.36707, -7.40513)
 id = 1
 
 [node name="Trigger3" parent="Tutorials" instance=ExtResource("14_d7v53")]
-position = Vector2(227, 238)
+position = Vector2(252, 238)
 rotation = -3.14159
-scale = Vector2(15.2781, 6.19777)
+scale = Vector2(12.734, 6.19778)
 id = 2
 
 [node name="Trigger4" parent="Tutorials" instance=ExtResource("14_d7v53")]
@@ -195,11 +195,11 @@ scale = Vector2(6.07896, 10.538)
 id = 3
 
 [node name="Tutorial" parent="Tutorials" instance=ExtResource("15_0qmeg")]
-position = Vector2(90, 68)
+position = Vector2(115, 68)
 sprite = "wasd"
 
 [node name="Tutorial2" parent="Tutorials" instance=ExtResource("15_0qmeg")]
-position = Vector2(838, 49)
+position = Vector2(839, 68)
 id = 1
 sprite = "arrows"
 
