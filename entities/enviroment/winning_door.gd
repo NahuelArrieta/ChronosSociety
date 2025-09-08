@@ -6,6 +6,7 @@ extends Area2D
 var players_in_area: int = 0
 
 func _ready():
+	$Sprite.play("closed")
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 

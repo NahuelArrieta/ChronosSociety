@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform float vignette_intensity = 0.05;
+uniform float vignette_intensity = 0.01;
 uniform float vignette_roundness = 1.0;
 uniform vec2 vignette_center = vec2(0.5, 0.35);
 
