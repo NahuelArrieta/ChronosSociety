@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://4brmlpdgi2ea"]
+
+[ext_resource type="Script" uid="uid://bgl8xocf8ojpc" path="res://entities/enviroment/winning_door.gd" id="1_u0fi6"]
+[ext_resource type="Texture2D" uid="uid://6cb0e08efmdi" path="res://visual/winning door/door.png" id="2_ljpaj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtaq0"]
+size = Vector2(92, 136)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd86h"]
+atlas = ExtResource("2_ljpaj")
+region = Rect2(20, 40, 150, 180)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsku0"]
+atlas = ExtResource("2_ljpaj")
+region = Rect2(170, 40, 150, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u6fws"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd86h")
+}],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsku0")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="WinningDoor" type="Area2D"]
+script = ExtResource("1_u0fi6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -1)
+shape = SubResource("RectangleShape2D_vtaq0")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_u6fws")
+animation = &"open"
