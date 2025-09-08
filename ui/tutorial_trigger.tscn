@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bccuddhtm4ue2"]
+
+[ext_resource type="Script" uid="uid://rmxj8takehn7" path="res://ui/tutorial_trigger.gd" id="1_acyg1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tbvck"]
+
+[node name="Trigger" type="Area2D"]
+script = ExtResource("1_acyg1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tbvck")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
