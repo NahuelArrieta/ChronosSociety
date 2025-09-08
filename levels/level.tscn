@@ -21,10 +21,10 @@ position = Vector2(1, 0)
 scale = Vector2(1.01048, 1.04758)
 
 [node name="Player1" parent="." instance=ExtResource("1_80vhd")]
-position = Vector2(274, 41)
+position = Vector2(169, 41)
 
 [node name="Player2" parent="." instance=ExtResource("1_80vhd")]
-position = Vector2(658, 109)
+position = Vector2(658, 41)
 player_number = 2
 
 [node name="Platforms" type="Node" parent="."]
@@ -34,8 +34,8 @@ position = Vector2(182, 155)
 scale = Vector2(13.3622, 1)
 
 [node name="Platform9" parent="Platforms" instance=ExtResource("2_hjsbj")]
-position = Vector2(1144, 152)
-scale = Vector2(6.1016, 1)
+position = Vector2(1088, 152)
+scale = Vector2(2.7016, 1)
 
 [node name="Platform3" parent="Platforms" instance=ExtResource("2_hjsbj")]
 position = Vector2(318, 320)
@@ -50,11 +50,11 @@ position = Vector2(946, 311)
 scale = Vector2(12.6822, 1)
 
 [node name="Platform10" parent="Platforms" instance=ExtResource("2_hjsbj")]
-position = Vector2(1121, 469)
-scale = Vector2(7.40223, 1)
+position = Vector2(1063, 469)
+scale = Vector2(5.48223, 1)
 
 [node name="Platform7" parent="Platforms" instance=ExtResource("2_hjsbj")]
-position = Vector2(586, 633)
+position = Vector2(553, 633)
 scale = Vector2(37.5222, 1)
 
 [node name="Platform8" parent="Platforms" instance=ExtResource("2_hjsbj")]
@@ -66,7 +66,7 @@ position = Vector2(-17, 297)
 scale = Vector2(1, 20.6)
 
 [node name="Wall2" parent="Platforms" instance=ExtResource("4_mxp4k")]
-position = Vector2(1169, 301)
+position = Vector2(1136, 301)
 scale = Vector2(1, 20.6)
 
 [node name="Wall3" parent="Platforms" instance=ExtResource("4_mxp4k")]
@@ -95,7 +95,7 @@ scale = Vector2(3, 5)
 [node name="Door 1" type="Node" parent="Enviroment"]
 
 [node name="Button" parent="Enviroment/Door 1" instance=ExtResource("4_5mrsh")]
-position = Vector2(1012, 285)
+position = Vector2(981, 285)
 groupId = 1
 
 [node name="Door2" parent="Enviroment/Door 1" instance=ExtResource("5_safpt")]
@@ -143,11 +143,11 @@ groupId = 4
 [node name="Door 5" type="Node" parent="Enviroment"]
 
 [node name="Button3" parent="Enviroment/Door 5" instance=ExtResource("4_5mrsh")]
-position = Vector2(872, 608)
+position = Vector2(852, 608)
 groupId = 5
 
 [node name="Door3" parent="Enviroment/Door 5" instance=ExtResource("5_safpt")]
-position = Vector2(1011, 551)
+position = Vector2(985, 551)
 groupId = 5
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -163,7 +163,7 @@ script = ExtResource("8_d5x7l")
 [node name="TimeTravelController" parent="." instance=ExtResource("9_ukwr8")]
 
 [node name="WinningDoor" parent="." instance=ExtResource("10_ukwr8")]
-position = Vector2(1085, 583)
+position = Vector2(1069, 583)
 scale = Vector2(0.5, 0.5)
 
 [node name="SceneContoller" type="Node" parent="."]
