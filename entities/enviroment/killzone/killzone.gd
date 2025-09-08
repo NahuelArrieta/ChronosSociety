@@ -30,5 +30,5 @@ func on_button_changed(button_id: int, is_active: bool) -> void:
 			setStatus(default)
 
 func setStatus(value: bool):
-	$CollisionShape2D.disabled = !value
+	$CollisionShape2D.set_deferred("disabled", !value)
 	$CollisionShape2D.visible = value
