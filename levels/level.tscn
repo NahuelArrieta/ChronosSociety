@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c7ejpm0cgaqea"]
+[gd_scene load_steps=16 format=3 uid="uid://c7ejpm0cgaqea"]
 
 [ext_resource type="PackedScene" uid="uid://bg8oq3w6fk3j3" path="res://entities/player/player.tscn" id="1_80vhd"]
 [ext_resource type="PackedScene" uid="uid://bn4dscbsrik6o" path="res://entities/enviroment/platform/platform.tscn" id="2_hjsbj"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://4brmlpdgi2ea" path="res://entities/enviroment/winning_door.tscn" id="10_ukwr8"]
 [ext_resource type="Script" uid="uid://bol7ttel1fahb" path="res://levels/scene_contoller.gd" id="11_pb8y7"]
 [ext_resource type="PackedScene" uid="uid://h4skg4i8mjva" path="res://entities/enviroment/killzone/killzone.tscn" id="12_hy0rb"]
+[ext_resource type="PackedScene" uid="uid://bccuddhtm4ue2" path="res://ui/tutorial_trigger.tscn" id="14_d7v53"]
+[ext_resource type="PackedScene" uid="uid://5i7ldojfh63i" path="res://ui/tutorial.tscn" id="15_0qmeg"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -21,10 +23,10 @@ position = Vector2(1, 0)
 scale = Vector2(1.01048, 1.04758)
 
 [node name="Player1" parent="." instance=ExtResource("1_80vhd")]
-position = Vector2(169, 41)
+position = Vector2(214, 41)
 
 [node name="Player2" parent="." instance=ExtResource("1_80vhd")]
-position = Vector2(658, 41)
+position = Vector2(657, 40)
 player_number = 2
 
 [node name="Platforms" type="Node" parent="."]
@@ -105,7 +107,7 @@ groupId = 1
 [node name="Door 2" type="Node" parent="Enviroment"]
 
 [node name="Door" parent="Enviroment/Door 2" instance=ExtResource("5_safpt")]
-position = Vector2(980, 154)
+position = Vector2(979, 154)
 rotation = 1.5708
 groupId = 2
 
@@ -168,3 +170,45 @@ scale = Vector2(0.5, 0.5)
 
 [node name="SceneContoller" type="Node" parent="."]
 script = ExtResource("11_pb8y7")
+
+[node name="Tutorials" type="Node" parent="."]
+
+[node name="Trigger" parent="Tutorials" instance=ExtResource("14_d7v53")]
+position = Vector2(164, 70)
+scale = Vector2(-15.936, -6.89941)
+
+[node name="Trigger2" parent="Tutorials" instance=ExtResource("14_d7v53")]
+position = Vector2(653, 73)
+scale = Vector2(-6.36707, -7.40513)
+id = 1
+
+[node name="Trigger3" parent="Tutorials" instance=ExtResource("14_d7v53")]
+position = Vector2(227, 238)
+rotation = -3.14159
+scale = Vector2(15.2781, 6.19777)
+id = 2
+
+[node name="Trigger4" parent="Tutorials" instance=ExtResource("14_d7v53")]
+position = Vector2(653, 268)
+rotation = -3.14159
+scale = Vector2(6.07896, 10.538)
+id = 3
+
+[node name="Tutorial" parent="Tutorials" instance=ExtResource("15_0qmeg")]
+position = Vector2(90, 68)
+sprite = "wasd"
+
+[node name="Tutorial2" parent="Tutorials" instance=ExtResource("15_0qmeg")]
+position = Vector2(838, 49)
+id = 1
+sprite = "arrows"
+
+[node name="Tutorial3" parent="Tutorials" instance=ExtResource("15_0qmeg")]
+position = Vector2(137, 237)
+id = 2
+sprite = "space"
+
+[node name="Tutorial4" parent="Tutorials" instance=ExtResource("15_0qmeg")]
+position = Vector2(653, 363)
+id = 3
+sprite = "shift"
