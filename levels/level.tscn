@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7ejpm0cgaqea"]
+[gd_scene load_steps=13 format=3 uid="uid://c7ejpm0cgaqea"]
 
 [ext_resource type="PackedScene" uid="uid://bg8oq3w6fk3j3" path="res://entities/player/player.tscn" id="1_80vhd"]
 [ext_resource type="PackedScene" uid="uid://bn4dscbsrik6o" path="res://entities/enviroment/platform/platform.tscn" id="2_hjsbj"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://d0oj0b2c0s4dd" path="res://controllers/time_travel_controller.tscn" id="9_ukwr8"]
 [ext_resource type="PackedScene" uid="uid://4brmlpdgi2ea" path="res://entities/enviroment/winning_door.tscn" id="10_ukwr8"]
 [ext_resource type="Script" uid="uid://bol7ttel1fahb" path="res://levels/scene_contoller.gd" id="11_pb8y7"]
+[ext_resource type="PackedScene" uid="uid://h4skg4i8mjva" path="res://entities/enviroment/killzone/killzone.tscn" id="12_hy0rb"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -71,3 +72,7 @@ scale = Vector2(0.5, 0.5)
 
 [node name="SceneContoller" type="Node" parent="."]
 script = ExtResource("11_pb8y7")
+
+[node name="Killzone" parent="." instance=ExtResource("12_hy0rb")]
+position = Vector2(429, 363)
+scale = Vector2(5, 1)
