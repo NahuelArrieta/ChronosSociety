@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://c7ejpm0cgaqea"]
+[gd_scene load_steps=14 format=3 uid="uid://c7ejpm0cgaqea"]
 
 [ext_resource type="PackedScene" uid="uid://bg8oq3w6fk3j3" path="res://entities/player/player.tscn" id="1_80vhd"]
 [ext_resource type="PackedScene" uid="uid://bn4dscbsrik6o" path="res://entities/enviroment/platform/platform.tscn" id="2_hjsbj"]
 [ext_resource type="PackedScene" uid="uid://d3qbem7373n6k" path="res://entities/enviroment/button/button.tscn" id="4_5mrsh"]
+[ext_resource type="PackedScene" uid="uid://dbgi5s25shso6" path="res://entities/enviroment/wall/wall.tscn" id="4_mxp4k"]
 [ext_resource type="PackedScene" uid="uid://b66i5kor3udi4" path="res://entities/enviroment/door/door.tscn" id="5_safpt"]
 [ext_resource type="PackedScene" uid="uid://mhlh1xmx4dds" path="res://levels/background/background.tscn" id="6_gjl0y"]
 [ext_resource type="AudioStream" uid="uid://ystflh4nvpky" path="res://music/background_music.ogg" id="7_vnv7o"]
@@ -17,6 +18,7 @@
 
 [node name="Background" parent="." instance=ExtResource("6_gjl0y")]
 position = Vector2(1, 0)
+scale = Vector2(1.01048, 1.04758)
 
 [node name="Player1" parent="." instance=ExtResource("1_80vhd")]
 position = Vector2(274, 41)
@@ -28,104 +30,124 @@ player_number = 2
 [node name="Platforms" type="Node" parent="."]
 
 [node name="Platform" parent="Platforms" instance=ExtResource("2_hjsbj")]
-position = Vector2(239, 155)
-scale = Vector2(9.76222, 1)
+position = Vector2(182, 155)
+scale = Vector2(13.3622, 1)
 
-[node name="Platform2" parent="Platforms" instance=ExtResource("2_hjsbj")]
-position = Vector2(593, 150)
-scale = Vector2(1.3416, 1)
-
-[node name="Platform6" parent="Platforms" instance=ExtResource("2_hjsbj")]
-position = Vector2(830, 152)
-scale = Vector2(5.2616, 1)
+[node name="Platform9" parent="Platforms" instance=ExtResource("2_hjsbj")]
+position = Vector2(1144, 152)
+scale = Vector2(6.1016, 1)
 
 [node name="Platform3" parent="Platforms" instance=ExtResource("2_hjsbj")]
-position = Vector2(410, 295)
-scale = Vector2(8.68222, 1)
+position = Vector2(318, 320)
+scale = Vector2(15.5622, 1)
 
 [node name="Platform4" parent="Platforms" instance=ExtResource("2_hjsbj")]
-position = Vector2(191, 497)
-scale = Vector2(6.48222, 1)
+position = Vector2(138, 484)
+scale = Vector2(9.32222, 1)
 
 [node name="Platform5" parent="Platforms" instance=ExtResource("2_hjsbj")]
-position = Vector2(1003, 308)
-scale = Vector2(6.48222, 1)
+position = Vector2(946, 311)
+scale = Vector2(12.6822, 1)
+
+[node name="Platform10" parent="Platforms" instance=ExtResource("2_hjsbj")]
+position = Vector2(1121, 469)
+scale = Vector2(7.40223, 1)
 
 [node name="Platform7" parent="Platforms" instance=ExtResource("2_hjsbj")]
 position = Vector2(586, 633)
 scale = Vector2(37.5222, 1)
+
+[node name="Platform8" parent="Platforms" instance=ExtResource("2_hjsbj")]
+position = Vector2(579, -18)
+scale = Vector2(37.5222, 1)
+
+[node name="Wall" parent="Platforms" instance=ExtResource("4_mxp4k")]
+position = Vector2(-17, 297)
+scale = Vector2(1, 20.6)
+
+[node name="Wall2" parent="Platforms" instance=ExtResource("4_mxp4k")]
+position = Vector2(1169, 301)
+scale = Vector2(1, 20.6)
+
+[node name="Wall3" parent="Platforms" instance=ExtResource("4_mxp4k")]
+position = Vector2(574, 234)
+scale = Vector2(0.787815, 16.6924)
+
+[node name="Wall4" parent="Platforms" instance=ExtResource("4_mxp4k")]
+position = Vector2(731, 321)
+scale = Vector2(0.787815, 11.2924)
+
+[node name="Platform6" parent="Platforms" instance=ExtResource("2_hjsbj")]
+position = Vector2(816, 153)
+scale = Vector2(6.1016, 1)
 
 [node name="Enviroment" type="Node" parent="."]
 
 [node name="Killzone 1" type="Node" parent="Enviroment"]
 
 [node name="Button" parent="Enviroment/Killzone 1" instance=ExtResource("4_5mrsh")]
-position = Vector2(837, 123)
+position = Vector2(837, 128)
 
 [node name="Killzone" parent="Enviroment/Killzone 1" instance=ExtResource("12_hy0rb")]
-position = Vector2(364, 79)
+position = Vector2(360, 79)
 scale = Vector2(3, 5)
 
 [node name="Door 1" type="Node" parent="Enviroment"]
 
 [node name="Button" parent="Enviroment/Door 1" instance=ExtResource("4_5mrsh")]
-position = Vector2(1012, 273)
-groupId = 1
-
-[node name="Door" parent="Enviroment/Door 1" instance=ExtResource("5_safpt")]
-position = Vector2(597, 69)
+position = Vector2(1012, 285)
 groupId = 1
 
 [node name="Door2" parent="Enviroment/Door 1" instance=ExtResource("5_safpt")]
-position = Vector2(363, 232)
+position = Vector2(390, 238)
 groupId = 1
 
 [node name="Door 2" type="Node" parent="Enviroment"]
 
 [node name="Door" parent="Enviroment/Door 2" instance=ExtResource("5_safpt")]
-position = Vector2(984, 151)
+position = Vector2(980, 154)
 rotation = 1.5708
 groupId = 2
 
 [node name="Button" parent="Enviroment/Door 2" instance=ExtResource("4_5mrsh")]
-position = Vector2(443, 269)
+position = Vector2(482, 295)
 groupId = 2
 
 [node name="Door 3" type="Node" parent="Enviroment"]
 
 [node name="Button2" parent="Enviroment/Door 3" instance=ExtResource("4_5mrsh")]
-position = Vector2(202, 472)
+position = Vector2(36, 459)
 groupId = 3
 
 [node name="Killzone2" parent="Enviroment/Door 3" instance=ExtResource("12_hy0rb")]
-position = Vector2(686, 460)
-scale = Vector2(3, 5)
+position = Vector2(653, 454)
+scale = Vector2(5.44, 4.04)
 groupId = 3
 default = false
 
 [node name="Door2" parent="Enviroment/Door 3" instance=ExtResource("5_safpt")]
-position = Vector2(681, 149)
+position = Vector2(653, 154)
 rotation = 1.5708
 groupId = 3
 
 [node name="Door 4" type="Node" parent="Enviroment"]
 
 [node name="Button3" parent="Enviroment/Door 4" instance=ExtResource("4_5mrsh")]
-position = Vector2(198, 605)
+position = Vector2(198, 608)
 groupId = 4
 
 [node name="Door3" parent="Enviroment/Door 4" instance=ExtResource("5_safpt")]
-position = Vector2(282, 410)
+position = Vector2(75, 402)
 groupId = 4
 
 [node name="Door 5" type="Node" parent="Enviroment"]
 
 [node name="Button3" parent="Enviroment/Door 5" instance=ExtResource("4_5mrsh")]
-position = Vector2(924, 606)
+position = Vector2(872, 608)
 groupId = 5
 
 [node name="Door3" parent="Enviroment/Door 5" instance=ExtResource("5_safpt")]
-position = Vector2(1011, 548)
+position = Vector2(1011, 551)
 groupId = 5
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -141,7 +163,7 @@ script = ExtResource("8_d5x7l")
 [node name="TimeTravelController" parent="." instance=ExtResource("9_ukwr8")]
 
 [node name="WinningDoor" parent="." instance=ExtResource("10_ukwr8")]
-position = Vector2(1092, 576)
+position = Vector2(1085, 583)
 scale = Vector2(0.5, 0.5)
 
 [node name="SceneContoller" type="Node" parent="."]

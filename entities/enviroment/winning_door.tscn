@@ -42,4 +42,4 @@ shape = SubResource("RectangleShape2D_vtaq0")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_u6fws")
-animation = &"open"
+animation = &"closed"
