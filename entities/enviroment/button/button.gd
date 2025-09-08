@@ -18,6 +18,7 @@ func _on_body_exited(body: Node2D) -> void:
 		set_active(false)
 	
 func set_active(value: bool):
+	Global.buttonChanged.emit(groupId, value)
 	if active == value:
 		return
 	
@@ -30,5 +31,5 @@ func set_active(value: bool):
 		$PressedSound.play()
 	else:
 		$Animation.play("unpresed")
-	Global.buttonChanged.emit(groupId, active)
+	
 	
