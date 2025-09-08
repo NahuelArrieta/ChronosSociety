@@ -1,5 +1,12 @@
 extends Area2D
 
+@export var groupId: int
+@export var default: bool = true
+
+func _ready() -> void:
+	setStatus(default)
+	Global.buttonChanged.connect(on_button_changed)
+
 # This function is automatically called when a body enters the Area2D.
 func _on_Area2D_body_entered(body):
 	if body.is_in_group(Global.PLAYER_GROUP):
@@ -14,3 +21,14 @@ func _on_Area2D_body_entered(body):
 		get_tree().reload_current_scene()
 		pass
 		
+func on_button_changed(button_id: int, is_active: bool) -> void:
+	# Check if the signal's ID matches this door's ID.
+	if button_id == groupId:
+		if is_active:  ## inversal
+			setStatus(!default)
+		else:
+			setStatus(default)
+
+func setStatus(value: bool):
+	$CollisionShape2D.disabled = !value
+	$CollisionShape2D.visible = value
